@@ -19,6 +19,24 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./styles/style.css" />
+
+    <?php
+      $blogs5 = [
+        'username' => 'Mallory Reyn',
+        'date' => 'April 14th, 2023',
+        'title' => '5 Reasons to avoid shopping on saturdays',
+        'body' => 'Lorem ipsum dolor sit amet, consectetur Pellentesque sit amet sapien
+        fringilla, mattis mattis tellus. Nullam quis imperdiet augue.
+        Vestibulum.',
+        'arrow' => 'READ MORE',
+        'blacktag' => 'FASHION',
+
+
+
+      ];
+    ?>
+
+
   </head>
 
   <body>
@@ -130,6 +148,7 @@
 
     <div class="section4">
       <h2>Trending</h2>
+
       <div class="sec4cards">
         <div class="sec4card">
           <img class="cardFirstImg" src="./images/section4img1.png" alt="2_blog" />
@@ -155,6 +174,7 @@
             <h2>LIFESTYLE</h2>
           </div>
         </div>
+
         <div class="sec4card">
           <img class="cardFirstImg" src="./images/section4img2.png" alt="3_blog" />
           <div class="userBar sec4">
@@ -184,75 +204,39 @@
 
     <!-- section 5 -->
     <section class="section5">
-      <div class="section5card">
-        <img src="./images/4_blog.svg" alt="" />
-        <div class="card-content">
-          <div class="user-info">
-            <img src="./images/user.svg" alt="" />
-            <div class="user-text">
-              <p>Mallory Reyn</p>
-              <p>April 14th, 2023</p>
-            </div>
+
+    <?php
+
+    for ($i = 0; $i < 3; $i++) {
+      echo '<div class="section5card">
+      <img src="./images/4_blog.svg" alt="" />
+      <div class="card-content">
+        <div class="user-info">
+          <img src="./images/user.svg" alt="" />
+          <div class="user-text">
+            <p>' . $blogs5['username'] . '</p>
+            <p>' . $blogs5['date'] . '</p>
           </div>
-          <h3>5 Reasons to avoid shopping on saturdays</h3>
-          <p class="card-description">
-            Lorem ipsum dolor sit amet, consectetur Pellentesque sit amet sapien
-            fringilla, mattis mattis tellus. Nullam quis imperdiet augue.
-            Vestibulum.
-          </p>
-          <p class="arrowIcon">
-            <i class="fa-solid fa-arrow-right"></i
-            ><span style="padding-left: 10px">READ MORE</span>
-          </p>
         </div>
-        <div class="blackTag">FASHION</div>
+        <h3>' . $blogs5['title'] . '</h3>
+        <p class="card-description">
+        ' . $blogs5['body'] . '
+        </p>
+        <p class="arrowIcon">
+          <i class="fa-solid fa-arrow-right"></i
+          ><span style="padding-left: 10px">' . $blogs5['arrow'] . '</span>
+        </p>
       </div>
-      <div class="section5card">
-        <img src="./images/5_blog.svg" alt="" />
-        <div class="card-content">
-          <div class="user-info">
-            <img src="./images/user.svg" alt="" />
-            <div class="user-text">
-              <p>Mallory Reyn</p>
-              <p>April 14th, 2023</p>
-            </div>
-          </div>
-          <h3>10 Brands that remained faithful to your classy look.</h3>
-          <p class="card-description">
-            Lorem ipsum dolor sit amet, consectetur Pellentesque sit amet sapien
-            fringilla, mattis mattis tellus. Nullam quis imperdiet augue.
-            Vestibulum.
-          </p>
-          <p class="arrowIcon">
-            <i class="fa-solid fa-arrow-right"></i
-            ><span style="padding-left: 10px">READ MORE</span>
-          </p>
-        </div>
-        <div class="blackTag">ENSEMBLES</div>
-      </div>
-      <div class="section5card">
-        <img src="./images/6_blog.svg" alt="" />
-        <div class="card-content">
-          <div class="user-info">
-            <img src="./images/user.svg" alt="" />
-            <div class="user-text">
-              <p>Mallory Reyn</p>
-              <p>April 14th, 2023</p>
-            </div>
-          </div>
-          <h3>Mental health tips to cope with stress.</h3>
-          <p class="card-description">
-            Lorem ipsum dolor sit amet, consectetur Pellentesque sit amet sapien
-            fringilla, mattis mattis tellus. Nullam quis imperdiet augue.
-            Vestibulum.
-          </p>
-          <p class="arrowIcon">
-            <i class="fa-solid fa-arrow-right"></i
-            ><span style="padding-left: 10px">READ MORE</span>
-          </p>
-        </div>
-        <div class="blackTag">MENTAL HEALTH</div>
-      </div>
+      <div class="blackTag">' . $blogs5['blacktag'] . '</div>
+    </div>';
+    }
+
+    ?>
+
+
+
+
+
     </section>
 
     <footer>
