@@ -20,21 +20,7 @@
     />
     <link rel="stylesheet" href="./styles/style.css" />
 
-    <?php
-      $blogs5 = [
-        'username' => 'Mallory Reyn',
-        'date' => 'April 14th, 2023',
-        'title' => '5 Reasons to avoid shopping on saturdays',
-        'body' => 'Lorem ipsum dolor sit amet, consectetur Pellentesque sit amet sapien
-        fringilla, mattis mattis tellus. Nullam quis imperdiet augue.
-        Vestibulum.',
-        'arrow' => 'READ MORE',
-        'blacktag' => 'FASHION',
-
-
-
-      ];
-    ?>
+     <?php require "./variables.php"; ?>
 
 
   </head>
@@ -46,15 +32,27 @@
 
         <nav>
           <ul>
-            <li><a href="index.html">Fashion</a></li>
-            <li><a href="">Lifestyle</a></li>
-            <li><a href="">Spiritual</a></li>
-            <li><a href="index3.html">Mental Health</a></li>
+          <?php
+            foreach($headerNav as $list) {
+                echo '<li><a href="' . $list["link"] .  '">' . $list["name"] . '</a></li>';
+            }
+        ?>
+
+
+            <!-- // <li><a href="index.html">Fashion</a></li>
+            // <li><a href="">Lifestyle</a></li>
+            // <li><a href="">Spiritual</a></li>
+            // <li><a href="index3.html">Mental Health</a></li> -->
+
+            
 
             <button class="button1">Contact Us</button>
             <button class="searchDiv">
-              <img style="width: 24px;" src="./images/search icon.png" alt="">
+            <img style="width: 24px;" src="./images/search icon.png" alt="" >
             </button>
+
+           
+
           </ul>
         </nav>
       </div>
@@ -63,6 +61,7 @@
 
         <p class="arrowIcon"><i class="fa-solid fa-arrow-right"></i><span style="padding-left: 10px;">READ MORE</span></p> -->
     </header>
+
 
     <!-- section 1 -->
 
@@ -209,25 +208,25 @@
 
     for ($i = 0; $i < 3; $i++) {
       echo '<div class="section5card">
-      <img src="./images/4_blog.svg" alt="" />
+      <img src="' . $blogs5[$i]['image'] . '" alt="" />
       <div class="card-content">
         <div class="user-info">
           <img src="./images/user.svg" alt="" />
           <div class="user-text">
-            <p>' . $blogs5['username'] . '</p>
-            <p>' . $blogs5['date'] . '</p>
+            <p>' . $blogs5[$i]['username'] . '</p>
+            <p>' . $blogs5[$i]['date'] . '</p>
           </div>
         </div>
-        <h3>' . $blogs5['title'] . '</h3>
+        <h3>' . $blogs5[$i]['title'] . '</h3>
         <p class="card-description">
-        ' . $blogs5['body'] . '
+        ' . $blogs5[$i]['body'] . '
         </p>
         <p class="arrowIcon">
           <i class="fa-solid fa-arrow-right"></i
-          ><span style="padding-left: 10px">' . $blogs5['arrow'] . '</span>
+          ><span style="padding-left: 10px">' . $blogs5[$i]['arrow'] . '</span>
         </p>
       </div>
-      <div class="blackTag">' . $blogs5['blacktag'] . '</div>
+      <div class="blackTag">' . $blogs5[$i]['blacktag'] . '</div>
     </div>';
     }
 
